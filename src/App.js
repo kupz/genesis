@@ -12,13 +12,16 @@ function App() {
       </div>
       <div className="hero1">
         <div className="left">
-          <p>You are invited to the Birthday of</p>
+          <p>PLEASE JOIN US</p>
+          <p>AS WE CELEBRATE THE</p>
+          <h2>Christening & Birthday</h2>
+          <p>OF OUR SON</p>
           <div>
             <h1>GENESIS</h1>
             <h3>07 : 10 - 22</h3>
           </div>
         </div>
-        <div>
+        <div className="genesis-container">
           <img src={genesis} className="genesis" />
         </div>
       </div>

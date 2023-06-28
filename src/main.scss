@@ -6,8 +6,8 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: rgb(34, 29, 29);
-  color: white;
+  background-color: #fff;
+  color: black;
 }
 .App {
   width: 100%;
@@ -34,18 +34,22 @@ body {
   .left {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 10px;
+    align-items: center;
     div {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 10px 30px;
-      border: 3px solid white;
+      border: 3px solid black;
     }
   }
 }
 .genesis {
   width: 350px;
   filter: drop-shadow(0 0 3px rgb(121, 112, 112));
+}
+.genesis-container {
+  padding: 1rem;
 }
