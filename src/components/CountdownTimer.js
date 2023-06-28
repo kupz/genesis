@@ -1,3 +1,5 @@
+import "./countdown.scss";
+
 import React, { useEffect, useState } from "react";
 
 const CountdownTimer = () => {
@@ -34,11 +36,19 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div>
-      <div>{countdown.days} days</div>
-      <div>{countdown.hours} hours</div>
-      <div>{countdown.minutes} minutes</div>
-      <div>{countdown.seconds} seconds</div>
+    <div className="countdown-container">
+      <div className="countdown">
+        <h5>{countdown.days}</h5> <h5>Days</h5>
+      </div>
+      <div className="countdown">
+        <h5>{countdown.hours}</h5> <h5>Hour</h5>
+      </div>
+      <div className="countdown">
+        <h5>{countdown.minutes} </h5> <h5>mins</h5>
+      </div>
+      <div className="countdown">
+        <h5>{countdown.seconds}</h5> <h5>sec</h5>
+      </div>
     </div>
   );
 };

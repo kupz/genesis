@@ -1,0 +1,14 @@
+.countdown-container {
+  display: flex;
+  gap: 1rem;
+}
+.countdown {
+  border: 1px solid white;
+  padding: 0.1rem;
+  aspect-ratio: 1/1;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
