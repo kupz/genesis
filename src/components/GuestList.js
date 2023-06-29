@@ -3,52 +3,24 @@ import "./guestlist.scss";
 import {changePage} from "../redux/pageSlice";
 import Home from "../pages/Home";
 import { useDispatch } from "react-redux";
-export default function GuestList() {
+export default function GuestList({guests}) {
   const dispatch = useDispatch();
   
   const backHome = () => dispatch(changePage(<Home />));
 
+  const GuestList = ({guests}) => {
+    return (
+      guests.map(guest => <Guest {...guest} />)
+    )
+  }
+
   return (
     <>
       <button className="button-home" onClick={backHome}>
-        Back to Home
+        Back to Home  
       </button>
       <div className="guestlist">
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
-        <Guest />
+        <GuestList guests={guests} />
       </div>
     </>
   );

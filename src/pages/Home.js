@@ -5,6 +5,7 @@ import { changePage } from "../redux/pageSlice";
 import GuestList from "../components/GuestList";
 import { toggleModal } from '../redux/modalSlice'
 import Form from '../components/Form'
+import { guestIndex } from '../Api'
 export default function Home() {
   const dispatch = useDispatch();
   const modal = useSelector((state) => state.modal)
@@ -15,8 +16,15 @@ export default function Home() {
   }
 
   const chagePage = () => {
-    dispatch(changePage(<GuestList />));
+    guestIndex().then(res => {
+      dispatch(changePage(<GuestList guests={res.data}  />));
+    })
   };
+
+  const getCode = () => {
+    const urlParams = new URLSearchParams(window.location.search)
+    return urlParams.get('code')
+  }
   return (
     <>
       <div className="app-countdown ">
@@ -40,7 +48,7 @@ export default function Home() {
             <span>GENESIS</span>
             <span>7 : 10 - 22</span>
           </div>
-          <button onClick={toggle}>Confirm my Attendace</button>
+          {getCode() !== null ? <button onClick={toggle}>Confirm my Attendace</button> : null }
         </div>
       </div>
       {/* When ? */}
@@ -101,7 +109,7 @@ export default function Home() {
         <h1>Save the date!</h1>
         <h3>See you on my special Day!</h3>
       </div>
-      {modal ? (<Form />): ('')}
+      {modal ? (<Form code={getCode()} />): ('')}
     </>
   );
 }
