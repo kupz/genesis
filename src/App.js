@@ -35,6 +35,7 @@ function App() {
           <div>
             <h1>When & Where</h1>
             <span>July 8 , 2023</span>
+            <span>10:00 AM</span>
 
             <span>420 Burger Ave.</span>
 
