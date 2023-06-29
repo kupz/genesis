@@ -1,10 +1,18 @@
 import CountdownTimer from "../components/CountdownTimer";
 import genesis from "../assets/kalbo.png";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { changePage } from "../redux/pageSlice";
 import GuestList from "../components/GuestList";
+import { toggleModal } from '../redux/modalSlice'
+import Form from '../components/Form'
 export default function Home() {
   const dispatch = useDispatch();
+  const modal = useSelector((state) => state.modal)
+
+  
+  const toggle = () => {
+    dispatch(toggleModal())
+  }
 
   const chagePage = () => {
     dispatch(changePage(<GuestList />));
@@ -32,7 +40,7 @@ export default function Home() {
             <span>GENESIS</span>
             <span>7 : 10 - 22</span>
           </div>
-          <button>Confirm my Attendace</button>
+          <button onClick={toggle}>Confirm my Attendace</button>
         </div>
       </div>
       {/* When ? */}
@@ -93,6 +101,7 @@ export default function Home() {
         <h1>Save the date!</h1>
         <h3>See you on my special Day!</h3>
       </div>
+      {modal ? (<Form />): ('')}
     </>
   );
 }

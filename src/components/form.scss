@@ -2,7 +2,14 @@
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
   padding: 2rem;
+  height: 100vh;
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
   .form {
     display: flex;
     flex-direction: row;
@@ -37,4 +44,9 @@
   border: 1px solid white;
   aspect-ratio: 1/1;
   padding: 1rem;
+}
+.btn-submit{
+  background-color: dodgerblue;
+  color: whitesmoke;
+  font-weight: bold;
 }

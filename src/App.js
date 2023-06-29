@@ -4,7 +4,8 @@ function App() {
   const currentPage = useSelector((state) => state.page);
   return (
     <div className="App">
-      <currentPage />
+      {currentPage}
+      
     </div>
   );
 }

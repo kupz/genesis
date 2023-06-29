@@ -1,5 +1,8 @@
 import "./form.scss";
+import { useDispatch } from "react-redux";
+import { toggleModal } from '../redux/modalSlice'
 export default function Form() {
+  const dispatch = useDispatch()
   return (
     <div className="form-container">
       <form className="form">
@@ -20,6 +23,8 @@ export default function Form() {
             <option value="kid">kid</option>
             <option value="baby">baby</option>
           </select>
+          <input type="submit" name="submit" className="btn-submit" />
+
         </div>
       </form>
     </div>

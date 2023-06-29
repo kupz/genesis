@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Home from "../pages/Home";
 
+
+
 const pageSlice = createSlice({
   name: "page",
-  initialState: Home,
+  initialState: <Home />,
   reducers: {
     changePage: (state, action) => (state = action.payload),
   },
