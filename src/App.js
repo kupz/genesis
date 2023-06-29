@@ -86,7 +86,7 @@ function App() {
       </div>
       <div className="footer neon">
         <h1>Save the date!</h1>
-        <h2>See you on my special Day!</h2>
+        <h3>See you on my special Day!</h3>
       </div>
     </div>
   );
