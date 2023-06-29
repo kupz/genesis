@@ -1,0 +1,25 @@
+.guest-container {
+  display: flex;
+  gap: 10px;
+  color: white;
+  border: 1px solid white;
+  width: 400px;
+  padding: 1rem;
+  border-radius: 10px;
+  height: 140px;
+  .guest-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100px;
+    width: 100%;
+    border: 1px solid white;
+    padding: 1rem;
+  }
+  .guest-img {
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1/1;
+    border: 1px solid white;
+  }
+}

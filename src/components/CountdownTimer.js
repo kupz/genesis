@@ -36,7 +36,7 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="countdown-container">
+    <div className="countdown-container neon">
       <div className="countdown">
         <h5>{countdown.days}</h5> <h5>Days</h5>
       </div>

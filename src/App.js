@@ -1,12 +1,12 @@
-import Navbar from "./components/Navbar";
 import CountdownTimer from "./components/CountdownTimer";
 import genesis from "./assets/kalbo.png";
 
 import "./main.scss";
+import GuestList from "./components/GuestList";
 function App() {
   return (
     <div className="App">
-      <div className="app-countdown">
+      <div className="app-countdown ">
         <CountdownTimer />
         <div className="nav">
           <div> Ninong & Ninang</div>
@@ -17,12 +17,14 @@ function App() {
         <div className="genesis-container">
           <img src={genesis} alt="genesis" className="genesis" />
         </div>
-        <div className="hero-right">
-          <span>PLEASE JOIN US</span>
-          <span>AS WE CELEBRATE</span>
-          <h1>Christening & Birthday</h1>
-          <span>OF OUR SON </span>
-          <div>
+        <div className="hero-right sign">
+          <span className="neon-blue">PLEASE JOIN US</span>
+          <span className="neon-blue">AS WE CELEBRATE</span>
+          <h1 className="neon-purple" id="trav">
+            Christening & Birthday
+          </h1>
+          <span className="neon-purple">OF OUR SON </span>
+          <div id="fade" className="neon-pink">
             <span>GENESIS</span>
             <span>7 : 10 - 22</span>
           </div>
@@ -33,13 +35,13 @@ function App() {
       <div className="when">
         <div>
           <div>
-            <h1>When & Where</h1>
-            <span>July 8 , 2023</span>
-            <span>10:00 AM</span>
+            <h1 className="flux">When & Where</h1>
+            <span className="neon">July 8 , 2023</span>
+            <span className="neon">10:00 AM</span>
 
-            <span>420 Burger Ave.</span>
+            <span className="neon">420 Burger Ave.</span>
 
-            <address>
+            <address className="neon">
               {
                 " 1358 Claremont St. Brookside Hills , Cainta, Philippines, 1900"
               }
@@ -82,7 +84,7 @@ function App() {
           </span>
         </div>
       </div>
-      <div className="footer">
+      <div className="footer neon">
         <h1>Save the date!</h1>
         <h2>See you on my special Day!</h2>
       </div>
