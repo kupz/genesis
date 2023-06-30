@@ -1,36 +1,29 @@
 import CountdownTimer from "../components/CountdownTimer";
 import genesis from "../assets/kalbo.png";
-import { useDispatch,useSelector } from "react-redux";
-import { changePage } from "../redux/pageSlice";
-import GuestList from "../components/GuestList";
-import { toggleModal } from '../redux/modalSlice'
-import Form from '../components/Form'
-import { guestIndex } from '../Api'
+import { useDispatch, useSelector } from "react-redux";
+import { toggleModal } from "../redux/modalSlice";
+import Form from "../components/Form";
+import { Link } from "react-router-dom";
 export default function Home() {
   const dispatch = useDispatch();
-  const modal = useSelector((state) => state.modal)
+  const modal = useSelector((state) => state.modal);
 
-  
   const toggle = () => {
-    dispatch(toggleModal())
-  }
-
-  const chagePage = () => {
-    guestIndex().then(res => {
-      dispatch(changePage(<GuestList guests={res.data}  />));
-    })
+    dispatch(toggleModal());
   };
 
   const getCode = () => {
-    const urlParams = new URLSearchParams(window.location.search)
-    return urlParams.get('code')
-  }
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get("code");
+  };
   return (
     <>
       <div className="app-countdown ">
         <CountdownTimer />
         <div className="nav">
-          <div onClick={chagePage}> Guest List</div>
+          <div>
+            <Link to="/guests">Guest List</Link>
+          </div>
         </div>
       </div>
       <div className="hero">
@@ -48,7 +41,9 @@ export default function Home() {
             <span>GENESIS</span>
             <span>7 : 10 - 22</span>
           </div>
-          {getCode() !== null ? <button onClick={toggle}>Confirm my Attendace</button> : null }
+          {getCode() !== null ? (
+            <button onClick={toggle}>Confirm my Attendace</button>
+          ) : null}
         </div>
       </div>
       {/* When ? */}
@@ -109,7 +104,8 @@ export default function Home() {
         <h1>Save the date!</h1>
         <h3>See you on my special Day!</h3>
       </div>
-      {modal ? (<Form code={getCode()} />): ('')}
+      {modal ? <Form code={getCode()} /> : ""}
+      {/* <CustomizedDialogs open={true} /> */}
     </>
   );
 }

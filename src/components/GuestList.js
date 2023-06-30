@@ -1,26 +1,28 @@
 import Guest from "./Guest";
 import "./guestlist.scss";
-import {changePage} from "../redux/pageSlice";
-import Home from "../pages/Home";
-import { useDispatch } from "react-redux";
-export default function GuestList({guests}) {
-  const dispatch = useDispatch();
-  
-  const backHome = () => dispatch(changePage(<Home />));
+import { useEffect, useState } from "react";
+import { guestIndex } from "../Api";
+import { Link } from "react-router-dom";
+export default function GuestList() {
+  const [guestList, setGuestList] = useState([]);
 
-  const GuestList = ({guests}) => {
-    return (
-      guests.map(guest => <Guest {...guest} />)
-    )
-  }
+  const GuestList = ({ guests }) => {
+    return guests.map((guest) => <Guest {...guest} key={guest.id} />);
+  };
+
+  useEffect(() => {
+    guestIndex().then((res) => {
+      setGuestList(res.data);
+    });
+  }, []);
 
   return (
     <>
-      <button className="button-home" onClick={backHome}>
-        Back to Home  
-      </button>
+      <div className="button-home">
+        <Link to="/">Back to Home</Link>
+      </div>
       <div className="guestlist">
-        <GuestList guests={guests} />
+        <GuestList guests={guestList} />
       </div>
     </>
   );

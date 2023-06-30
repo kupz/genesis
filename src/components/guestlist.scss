@@ -29,11 +29,12 @@
   background-color: #555; /* Set the color of the thumb on hover */
 }
 
-button {
+div a {
   padding: 10px 20px;
   outline: none;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   font-weight: bold;
   color: whitesmoke;
+  text-decoration: none;
 }
