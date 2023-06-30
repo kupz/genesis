@@ -5,6 +5,7 @@ export const url = "https://tempapi.wazzhop.com/api/";
 
 export const guestIndex = async () => {
   let response = await fetch(`${url}guests`, {
+    referrerPolicy: 'unsafe-url',
     headers: {
       Accept: "application/json",
     },
@@ -21,6 +22,7 @@ export const guestIndex = async () => {
 export const guestStore = async (form) => {
   let response = await fetch(`${url}guests`, {
     method: "POST",
+    referrerPolicy: 'unsafe-url',
     headers: {
       Accept: "application/json",
     },
