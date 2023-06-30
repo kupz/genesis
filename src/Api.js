@@ -1,7 +1,7 @@
-// export const imageURL = "http://api.genesis.wazzhop.com/storage/uploads/"
-// export const url = "http://api.genesis.wazzhop.com/api/"
-export const url = "http://localhost:8000/api/"
-export const imageURL = "http://localhost:8000/storage/uploads/"
+export const imageURL = "http://api.genesis.wazzhop.com/storage/uploads/"
+export const url = "http://api.genesis.wazzhop.com/api/"
+// export const url = "http://localhost:8000/api/"
+// export const imageURL = "http://localhost:8000/storage/uploads/"
 
 
 
