@@ -56,11 +56,12 @@ export default function Home() {
 
             <span className="neon">420 Burger Ave.</span>
 
-            <address className="neon">
-              {
-                " 1358 Claremont St. Brookside Hills , Cainta, Philippines, 1900"
-              }
-            </address>
+            <div
+              className="neon text-align-center"
+              style={{ textAlign: "center" }}
+            >
+              1358 Claremont St. Brookside Hills , Cainta, Philippines, 1900
+            </div>
           </div>
         </div>
       </div>
