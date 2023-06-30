@@ -26,9 +26,23 @@ export default function Form({ code }) {
     guestForm.append("image", document.getElementById("uploadImage").files[0]);
 
     guestStore(guestForm).then((res) => {
-      console.log(res);
+      if(res.ok){
+        dispatch(toggleModal());
+        alert("Attendance confirmed!")
+      }
+      else{
+        if(res?.errors){
+          Object.keys(res.errors).forEach(error => {
+            alert(res.errors[error])
+          })
+        }
+        else{
+          if(res?.message){
+            alert(res.message)
+          }
+        }
+      }
     });
-    dispatch(toggleModal());
   };
   const genderChange = (e) => {
     gender = e.target.value;
@@ -61,7 +75,6 @@ export default function Form({ code }) {
             </div>
           </label>
           <input
-            required
             name="image"
             onChange={(e) => imageChange(e)}
             id="uploadImage"
