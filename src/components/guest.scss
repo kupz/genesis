@@ -9,6 +9,7 @@
   height: 160px;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   .guest-info {
     display: flex;
     flex-direction: column;
@@ -17,6 +18,7 @@
     width: 100%;
     border: 1px solid white;
     padding: 1rem;
+    overflow: hidden;
   }
   .guest-img {
     height: 100%;

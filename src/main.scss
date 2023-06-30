@@ -15,7 +15,9 @@ body {
   align-items: center;
   background-image: url("https://images.pexels.com/photos/1227497/pexels-photo-1227497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
+  overflow-y: scroll;
 }
+
 .App {
   width: 100%;
   display: flex;
@@ -23,6 +25,7 @@ body {
   padding: 1rem;
   align-items: center;
   gap: 1rem;
+  overflow: hidden;
 }
 .app-countdown {
   padding: 1rem;
@@ -38,14 +41,18 @@ body {
   .nav {
     display: flex;
     column-gap: 1rem;
+    border: 1px solid white;
+    padding: 11px;
+    background-color: black;
 
-    div {
+    div a {
+      text-decoration: none;
       font-weight: bolder;
       text-align: center;
-      background-color: black;
+
       cursor: pointer;
       padding: 10px 30px;
-      border-radius: 10px;
+
       color: whitesmoke;
     }
   }
@@ -157,6 +164,9 @@ body {
   .others2 {
     background-color: navajowhite;
   }
+}
+.text-align-center {
+  text-align: center;
 }
 
 .gift-ideas {
@@ -374,5 +384,11 @@ body {
     text-shadow: 0 0 0.5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180,
       0 0 5vw #082180, 0 0 0.2vw #082180, 0.5vw 0.5vw 0.1vw #0a3940;
     color: #146c80;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .App {
+    padding: 0;
   }
 }

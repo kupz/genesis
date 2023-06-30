@@ -1,6 +1,7 @@
 import "./countdown.scss";
+import { gsap } from "gsap";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const CountdownTimer = () => {
   const [countdown, setCountdown] = useState({
@@ -8,6 +9,27 @@ const CountdownTimer = () => {
     hours: 0,
     minutes: 0,
     seconds: 0,
+  });
+
+  const sample1 = useRef(null);
+  useEffect(() => {
+    const textElement = sample1.current;
+
+    const toggleVisibility = () => {
+      gsap.set(textElement, { visibility: "hidden" });
+      gsap.delayedCall(Math.random() * 0.1, () => {
+        gsap.set(textElement, { visibility: "visible" });
+      });
+    };
+
+    const flickerAnimation = gsap.timeline({ repeat: -1 });
+    flickerAnimation.to(textElement, { opacity: 0.2, duration: 0.1 });
+    flickerAnimation.to(textElement, { opacity: 1, duration: 1 });
+    flickerAnimation.eventCallback("onComplete", toggleVisibility);
+
+    return () => {
+      flickerAnimation.kill();
+    };
   });
 
   useEffect(() => {
@@ -36,7 +58,8 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="countdown-container neon">
+    <div className="countdown-container " ref={sample1}>
+      {/* // <div ref={sample1}> */}
       <div className="countdown">
         <h5>{countdown.days}</h5> <h5>Days</h5>
       </div>
