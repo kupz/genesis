@@ -1,5 +1,5 @@
-export const imageURL = "https://api.genesis.wazzhop.com/storage/uploads/";
-export const url = "https://api.genesis.wazzhop.com/api/";
+export const imageURL = "https://tempapi.wazzhop.com/storage/uploads/";
+export const url = "https://tempapi.wazzhop.com/api/";
 // export const url = "http://localhost:8000/api/"
 // export const imageURL = "http://localhost:8000/storage/uploads/"
 
